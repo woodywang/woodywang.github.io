@@ -28,6 +28,18 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
+# Category and Tag display mappings
+category_display:
+  tech: "技术分享"
+  life: "生活感悟"
+  notes: "开发笔记"
+
+tag_display:
+  claude-code: "Claude Code"
+  mcp: "MCP"
+  ai-tools: "AI工具"
+  productivity: "开发效率"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

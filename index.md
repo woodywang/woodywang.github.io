@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 ---
 
 # 欢迎来到 Brain Sandbox

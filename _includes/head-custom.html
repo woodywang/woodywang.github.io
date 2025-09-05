@@ -8,4 +8,36 @@
 <meta name="theme-color" content="#2e7d32">
 <meta name="msapplication-TileColor" content="#2e7d32">
 
+<!-- Mermaid Diagram Support -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  
+  // 初始化配置
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+      primaryColor: '#2e7d32',
+      primaryTextColor: '#fff',
+      primaryBorderColor: '#2e7d32',
+      lineColor: '#5D9CEC',
+      secondaryColor: '#006100',
+      tertiaryColor: '#fff'
+    }
+  });
+  
+  // 处理 Jekyll 生成的 language-mermaid 类
+  document.addEventListener('DOMContentLoaded', function() {
+    const codeBlocks = document.querySelectorAll('pre code.language-mermaid');
+    codeBlocks.forEach(function(codeBlock) {
+      const mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = codeBlock.textContent;
+      codeBlock.parentElement.parentElement.replaceChild(mermaidDiv, codeBlock.parentElement);
+    });
+    // 重新初始化 mermaid 以渲染新添加的图表
+    mermaid.init();
+  });
+</script>
+
 <!-- end custom head snippets -->
