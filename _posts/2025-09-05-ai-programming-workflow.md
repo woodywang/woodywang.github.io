@@ -17,14 +17,14 @@ comments: true
   - Claude Code 插件 + OpusPlan 模式
   - 测试框架：Jest（前端）+ Hardhat（合约）
   - 版本控制：Git with Conventional Commits
-- **硬件配置**：
 
-```markdown
-OS: macOS Monterey / Docker Engine:
+- **软硬件配置**：
+
+OS: macOS / Docker Engine
 VSCode Extensions: 
   - Dev Containers
   - Claude Code
-```
+
 - **成本效益**：
   - Claude Max 订阅 ($100/月)
   - 项目周期缩短：功能开发从 7 人日 → 0.5 人日
