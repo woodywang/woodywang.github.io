@@ -131,11 +131,28 @@ graph TD
 
 ### 安装配置
 
-```bash
-exec $(which uvx || echo uvx) --from git+https://github.com/BeehiveInnovations/zen-mcp-server.git zen-mcp-server
+**Option B: 即时设置（推荐）**
+
+在 `~/.claude/settings.json` 或 `.mcp.json` 中添加以下配置：
+
+```json
+{
+  "mcpServers": {
+    "zen": {
+      "command": "bash",
+      "args": ["-c", "for p in $(which uvx 2>/dev/null) $HOME/.local/bin/uvx /opt/homebrew/bin/uvx /usr/local/bin/uvx uvx; do [ -x \"$p\" ] && exec \"$p\" --from git+https://github.com/BeehiveInnovations/zen-mcp-server.git zen-mcp-server; done; echo 'uvx not found' >&2; exit 1"],
+      "env": {
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin:~/.local/bin",
+        "OPENROUTER_API_KEY": "your-key-here",
+        "DISABLED_TOOLS": "analyze,refactor,testgen,secaudit,docgen,tracer",
+        "DEFAULT_MODEL": "auto"
+      }
+    }
+  }
+}
 ```
 
-配置 OpenRouter API Key 后，就能在 Claude 中灵活调用各类模型。
+配置完成后，就能在 Claude 中灵活调用各类模型。支持 OpenRouter API 或单独配置各平台 API Key。
 
 ```mermaid
 graph LR
