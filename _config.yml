@@ -33,6 +33,7 @@ category_display:
   tech: "技术分享"
   life: "生活感悟"
   notes: "开发笔记"
+  security: "信息安全"
 
 tag_display:
   claude-code: "Claude Code"
