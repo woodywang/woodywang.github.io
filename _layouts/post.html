@@ -25,6 +25,12 @@ layout: default
   {{ content }}
 </div>
 
+{% if page.comments %}
+<div class="comments-section">
+  {% include disqus.html %}
+</div>
+{% endif %}
+
 <div class="post-navigation">
   <p><a href="{{ '/' | relative_url }}">&larr; 返回首页</a></p>
 </div>
@@ -72,5 +78,11 @@ layout: default
 
 .post-navigation a:hover {
   text-decoration: underline;
+}
+
+.comments-section {
+  margin: 40px 0;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
 }
 </style>

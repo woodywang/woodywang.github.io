@@ -4,6 +4,7 @@ title: "AI 编码时代，程序员的核心能力重新洗牌了"
 date: 2025-09-05 14:30:00 +0800
 categories: [tech]
 tags: [ai-coding, career-development, programming-skills, software-engineering]
+comments: true
 ---
 
 最近和几个朋友聊天，大家都有个共同感受：写代码这件事，真的变了。
