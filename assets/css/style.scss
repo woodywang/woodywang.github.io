@@ -1,0 +1,19 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom styles */
+body {
+  line-height: 1.6;
+}
+
+.highlight {
+  background-color: #f8f8f8;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Add custom styling here */
