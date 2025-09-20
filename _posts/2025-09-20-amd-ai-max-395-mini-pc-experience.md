@@ -2,7 +2,7 @@
 layout: post
 title: "被 128GB 内存种草的 AMD AI Max+ 395：从 Twitter 热议到本地大模型推理的新选择"
 date: 2025-09-20 15:39:00 +0800
-categories: [硬件]
+categories: [Hardware]
 tags: [AMD, Mini PC, 大模型, 本地推理, 硬件评测]
 comments: true
 ---
