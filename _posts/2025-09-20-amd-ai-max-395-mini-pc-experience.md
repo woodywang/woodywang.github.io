@@ -104,7 +104,31 @@ graph TD
 1. **AMD AI Max+ 395 Mini 主机**：1-2 万块就能拿下，性价比没得说，但性能上限确实低一些
 2. **Mac Studio M3 Ultra 512GB**：性能强到没边，但 7 万多的价格真心肉疼
 
-![决策流程图](placeholder-image-3.jpg)
+```mermaid
+flowchart TD
+    A[我的需求分析] --> B{主要用途?}
+    B -->|7B-32B 模型| C[日常使用为主]
+    B -->|70B 模型| D[偶尔测试]
+
+    C --> E{预算考虑}
+    D --> E
+
+    E -->|1-2万元| F[AMD AI Max+ 395<br/>Mini 主机]
+    E -->|7万+元| G[Mac Studio<br/>M3 Ultra 512GB]
+
+    F --> H[✅ 性价比高<br/>✅ 够用<br/>❌ 性能上限低]
+    G --> I[✅ 性能强悍<br/>✅ 内存充足<br/>❌ 价格肉疼]
+
+    H --> J{5万块钱差价}
+    I --> J
+
+    J --> K[能买好几代<br/>新硬件了!]
+    K --> L[倾向选择<br/>AMD 方案]
+
+    style F fill:#e1f5fe
+    style G fill:#fff3e0
+    style L fill:#e8f5e8
+```
 
 琢磨了一下，我平时主要跑的是 7B 到 32B 的模型，70B 的也就是偶尔玩玩，AMD 的方案应该够我折腾了。再说了，省下来的那 5 万多块钱，都够我升级好几代硬件了！
 
