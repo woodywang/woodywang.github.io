@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { name: '技术分享', icon: '💡', desc: '探索前沿技术，分享实践经验' },
+  { name: '生活感悟', icon: '🌱', desc: '记录生活中的思考与感悟' },
+  { name: '开发笔记', icon: '📝', desc: '开发过程中的踩坑与收获' },
+  { name: '信息安全', icon: '🔒', desc: '安全架构与最佳实践' },
+];
+---
+
+<Layout title="Brain Sandbox - 一个关于技术与生活的思考实验场" description="一个关于技术与生活的思考实验场。探索技术、记录生活、分享知识。">
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80">
+          <rect width="100" height="100" rx="20" fill="#2e7d32"/>
+          <g transform="translate(50, 50)">
+            <path d="M-20,-15 Q-25,-20 -25,-10 Q-30,-5 -25,0 Q-30,5 -25,10 Q-25,20 -20,15 Q-15,20 -10,15 L-10,-15 Q-15,-20 -20,-15" fill="white" opacity="0.9"/>
+            <path d="M20,-15 Q25,-20 25,-10 Q30,-5 25,0 Q30,5 25,10 Q25,20 20,15 Q15,20 10,15 L10,-15 Q15,-20 20,-15" fill="white" opacity="0.9"/>
+            <rect x="-10" y="-15" width="20" height="30" fill="white" opacity="0.9"/>
+            <path d="M-15,-10 Q-10,-8 -5,-10 M5,-10 Q10,-8 15,-10" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+            <path d="M-15,0 Q-10,2 -5,0 M5,0 Q10,2 15,0" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+            <path d="M-15,10 Q-10,8 -5,10 M5,10 Q10,8 15,10" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+          </g>
+          <circle cx="25" cy="75" r="2" fill="white" opacity="0.6"/>
+          <circle cx="35" cy="78" r="1.5" fill="white" opacity="0.5"/>
+          <circle cx="30" cy="82" r="1.5" fill="white" opacity="0.5"/>
+          <circle cx="65" cy="76" r="1.5" fill="white" opacity="0.5"/>
+          <circle cx="70" cy="80" r="2" fill="white" opacity="0.6"/>
+          <circle cx="75" cy="75" r="1.5" fill="white" opacity="0.5"/>
+        </svg>
+      </div>
+      <h1>Brain Sandbox</h1>
+      <p class="tagline">一个关于技术与生活的思考实验场</p>
+      <p class="tagline-en">A sandbox for thoughts on technology and life</p>
+      <a href="https://blog.brainsandbox.com" class="cta">进入博客 &rarr;</a>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+      <div class="grid">
+        {categories.map((cat) => (
+          <a href={`https://blog.brainsandbox.com`} class="card">
+            <span class="card-icon">{cat.icon}</span>
+            <h3>{cat.name}</h3>
+            <p>{cat.desc}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <h2>关于</h2>
+      <p>
+        我是 Woody，一个热爱技术和编程的全栈开发者。我相信代码不仅是工具，更是一种创造性的表达方式。这里是我的数字沙盒，记录技术探索和生活感悟。
+      </p>
+      <div class="social">
+        <a href="https://github.com/woodywang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://twitter.com/JinboWang14" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Brain Sandbox. All rights reserved.</p>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 5rem 0 3rem;
+  }
+
+  .logo {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+  }
+
+  .tagline-en {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+  }
+
+  .cta {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .cta:hover {
+    background: var(--color-primary-hover);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* Categories */
+  .categories {
+    padding: 2rem 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+    color: var(--color-text);
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    color: var(--color-text);
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--color-primary-dark);
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  /* About */
+  .about {
+    padding: 2.5rem 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+  }
+
+  .about p {
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social a {
+    color: var(--color-text-secondary);
+    transition: color 0.2s;
+  }
+
+  .social a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  footer p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero {
+      padding: 3rem 0 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
