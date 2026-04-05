@@ -1,12 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const categories = [
-  { name: '技术分享', icon: '💡', desc: '探索前沿技术，分享实践经验' },
-  { name: '生活感悟', icon: '🌱', desc: '记录生活中的思考与感悟' },
-  { name: '开发笔记', icon: '📝', desc: '开发过程中的踩坑与收获' },
-  { name: '信息安全', icon: '🔒', desc: '安全架构与最佳实践' },
-];
 ---
 
 <Layout title="Brain Sandbox - 一个关于技术与生活的思考实验场" description="一个关于技术与生活的思考实验场。探索技术、记录生活、分享知识。">
@@ -36,19 +30,6 @@ const categories = [
       <p class="tagline">一个关于技术与生活的思考实验场</p>
       <p class="tagline-en">A sandbox for thoughts on technology and life</p>
       <a href="https://blog.brainsandbox.com" class="cta">进入博客 &rarr;</a>
-    </section>
-
-    <!-- Categories -->
-    <section class="categories">
-      <div class="grid">
-        {categories.map((cat) => (
-          <a href={`https://blog.brainsandbox.com`} class="card">
-            <span class="card-icon">{cat.icon}</span>
-            <h3>{cat.name}</h3>
-            <p>{cat.desc}</p>
-          </a>
-        ))}
-      </div>
     </section>
 
     <!-- About -->
@@ -128,52 +109,6 @@ const categories = [
     transform: translateY(-1px);
   }
 
-  /* Categories */
-  .categories {
-    padding: 2rem 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .card {
-    background: var(--color-card);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: box-shadow 0.2s, transform 0.2s;
-    display: block;
-    color: var(--color-text);
-  }
-
-  .card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-    color: var(--color-text);
-  }
-
-  .card-icon {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: var(--color-primary-dark);
-  }
-
-  .card p {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-    line-height: 1.5;
-  }
-
   /* About */
   .about {
     padding: 2.5rem 0;
@@ -235,8 +170,5 @@ const categories = [
       font-size: 1.1rem;
     }
 
-    .grid {
-      grid-template-columns: 1fr;
-    }
   }
 </style>
