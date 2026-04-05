@@ -1,17 +1,19 @@
 ---
 layout: post
 title: "从一周到半天：AI 编程工作流深度实践"
+description: "全栈开发者分享使用 Claude Code + Devcontainer + TDD 开发 EVM 交易签名审核应用的实战经验，开发效率提升 10 倍的具体方法和工具配置。"
 date: 2025-09-05 17:14:01 +0000
 categories: [tech-sharing, ai-programming]
 tags: [Claude Code, TDD, Devcontainer, 开发工具, 经验分享]
 comments: true
+mermaid: true
 ---
 
 大家好，我是一名全栈开发者，最近在开发基于 EVM 的交易签名审核 Web 应用（React 前端 + Solidity 合约）时，通过系统化应用 AI 编程将开发效率提升 10 倍。本文将分享具体的技术实践，包含工具配置细节、真实案例分析和可复用的工作流模板。
 
 ---
 
-#### 开发环境与技术栈
+## 开发环境与技术栈
 - **核心工具**：
   - VSCode + Devcontainer（Docker 隔离环境）
   - Claude Code 插件 + OpusPlan 模式

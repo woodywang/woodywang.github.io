@@ -2,6 +2,55 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 | escape }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "inLanguage": "zh-CN",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name | escape }}",
+    "url": "{{ site.url }}/about/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name | escape }}",
+    "url": "{{ site.url }}/about/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  }{% if page.categories.size > 0 %},
+  "articleSection": "{{ page.categories | first | escape }}"{% endif %}{% if page.tags.size > 0 %},
+  "keywords": "{{ page.tags | join: ', ' | escape }}"{% endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{ site.title | escape }}",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title | escape }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+
 <div class="post-header">
   <h1>{{ page.title }}</h1>
   <p class="post-meta">
@@ -24,6 +73,8 @@ layout: default
 <div class="post-content">
   {{ content }}
 </div>
+
+{% include author-bio.html %}
 
 {% if page.comments %}
 <div class="comments-section">

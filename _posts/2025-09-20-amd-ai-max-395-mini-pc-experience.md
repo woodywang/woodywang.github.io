@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "被 128GB 内存种草的 AMD AI Max+ 395：从 Twitter 热议到本地大模型推理的新选择"
+description: "深度分析 AMD AI Max+ 395 芯片及 GMKtec、Beelink、Minisforum 三款 Mini PC，对比 Mac Studio M3 Ultra，评估 128GB 统一内存本地大模型推理的可行性。"
 date: 2025-09-20 15:39:00 +0800
-categories: [Hardware]
+categories: [hardware]
 tags: [AMD, Mini PC, 大模型, 本地推理, 硬件评测]
 comments: true
+mermaid: true
 ---
 
 前几天逛 Twitter 的时候，偶然刷到有人分享 AMD 新推出的 AI Max+ 395 芯片，据说支持高达 128GB 的内存，而且已经有好几家 Mini 主机厂商推出了相关产品。作为一个经常折腾本地大模型推理的人，这个消息瞬间让我眼前一亮。要知道，现在的大模型动辄几十GB甚至上百GB，内存一直是个让人头疼的瓶颈啊！

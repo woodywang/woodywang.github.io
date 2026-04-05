@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "两个让 Claude 开发效率翻倍的 MCP 神器：告别文档过时与单模型局限"
+description: "推荐 Context7 和 Zen MCP 两个实用 MCP 插件，解决 AI 编程中文档过时和单模型局限的痛点，附安装配置和使用技巧。"
 date: 2025-09-05 10:30:00 +0800
 categories: [tech]
 tags: [claude-code, mcp, ai-tools, productivity]
 comments: true
+mermaid: true
 ---
 
 最近在 Twitter 看到 Claude Code MCP 的讨论，让我想起正在使用的两个 MCP 插件。作为需要频繁审计代码的安全工程师，这两个工具确实解决了实际工作中的痛点，分享下使用体验。

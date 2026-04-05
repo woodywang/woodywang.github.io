@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: post
 title: "x402 协议核心流程解析：面向开发者的分步指南"
+description: "详解 x402 协议的 12 步支付流程、四大角色和核心数据结构，帮助开发者理解基于 HTTP 402 的互联网原生支付标准。"
 date: 2025-10-31
 categories: [tech, blockchain]
 tags: [ai, x402]

@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "从 VPN 到 Zero Trust：我的安全架构升级之路"
+description: "从 Supabase 审计和 Bybit 企业实践出发，对比 VPN 与 Zero Trust 架构的安全性差异，分享从传统 VPN 迁移到零信任的实战经验。"
 date: 2025-09-05 10:30:00 +0800
 categories: [security, tech]
 tags: [Zero Trust, VPN, network security, enterprise security]
 comments: true
+mermaid: true
 ---
 
 说到企业网络安全，VPN 绝对是大多数人的第一反应。我刚入行那会儿，每次访问公司内部系统，都得先伺候好那个让人又爱又恨的 VPN 客户端——连不上它，啥都干不了。但最近审计一个跑在 Supabase 上的内部应用时，我彻底被逼着重新思考：在云服务满天飞的今天，老一套 VPN 防护还罩得住吗？

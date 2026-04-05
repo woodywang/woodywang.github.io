@@ -51,3 +51,23 @@ Brain Sandbox 是一个技术博客和个人思考的实验场。这个名字的
 ---
 
 *"The best way to predict the future is to invent it." - Alan Kay*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Woody Wang",
+  "url": "https://blog.brainsandbox.com/about/",
+  "sameAs": [
+    "https://github.com/woodywang",
+    "https://twitter.com/JinboWang14"
+  ],
+  "knowsAbout": [
+    "AI Programming",
+    "Blockchain",
+    "Information Security",
+    "System Architecture",
+    "Web Development"
+  ]
+}
+</script>
