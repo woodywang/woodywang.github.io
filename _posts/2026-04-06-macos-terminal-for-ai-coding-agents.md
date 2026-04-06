@@ -18,14 +18,22 @@ mermaid: true
 直接说吧，**没有哪个终端是 AI 编码的"最优解"**。它们各有各的优势和坑点，选哪个更多取决于你的使用习惯和具体场景。下面这张图大致概括了四款终端的定位：
 
 ```mermaid
-quadrantChart
-    title 终端定位分布
-    x-axis 轻量简单 --> 功能丰富
-    y-axis 传统终端 --> AI 原生
-    Terminal.app: [0.15, 0.15]
-    iTerm2: [0.75, 0.35]
-    Ghostty: [0.40, 0.30]
-    Warp: [0.85, 0.85]
+graph LR
+    subgraph 传统终端
+        A["Terminal.app<br/>轻量 · 零配置 · 功能有限"]
+        B["iTerm2<br/>功能丰富 · 滚屏回溯 · 生态成熟"]
+    end
+    subgraph 新一代终端
+        C["Ghostty<br/>GPU 渲染 · 性能优先 · 仍在打磨"]
+        D["Warp<br/>AI 原生 · 内置助手 · 多模型"]
+    end
+    A --->|"升级"| B
+    B --->|"追求性能"| C
+    B --->|"追求 AI 集成"| D
+    style A fill:#e0e0e0,color:#666
+    style B fill:#4CAF50,color:#fff
+    style C fill:#2196F3,color:#fff
+    style D fill:#FF9800,color:#fff
 ```
 
 ## Terminal.app：能用，但别折腾
