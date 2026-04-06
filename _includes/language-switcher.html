@@ -8,7 +8,7 @@
       {% else %}
         {% assign target_url = "/" | append: lang | append: page.url %}
       {% endif %}
-      <a href="{{ target_url }}" class="lang-pill" onclick="document.cookie='lang_pref={{ lang }};path=/;max-age=2592000'">{{ site.data[lang].lang_name }}</a>
+      <a {% static_href %}href="{{ target_url }}"{% endstatic_href %} class="lang-pill" onclick="document.cookie='lang_pref={{ lang }};path=/;max-age=2592000'">{{ site.data[lang].lang_name }}</a>
     {% endif %}
   {% endfor %}
 </nav>
