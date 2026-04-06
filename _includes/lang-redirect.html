@@ -1,15 +1,29 @@
 <script>
 (function() {
-  // Skip if user has a language preference cookie
-  if (document.cookie.indexOf('lang_pref=') !== -1) return;
-  // Skip if already on English path
-  if (window.location.pathname.indexOf('/en/') === 0 || window.location.pathname === '/en') return;
-  // Check browser language
+  var path = window.location.pathname;
+  var onEn = path.indexOf('/en/') === 0 || path === '/en';
+  var match = document.cookie.match(/(?:^|; )lang_pref=([^;]*)/);
+  var pref = match ? match[1] : null;
+
+  // If user has a preference cookie, redirect to the right version
+  if (pref === 'en' && !onEn) {
+    window.location.replace('/en' + path + window.location.search + window.location.hash);
+    return;
+  }
+  if (pref === 'zh-CN' && onEn) {
+    var zhPath = path.replace(/^\/en\/?/, '/') || '/';
+    window.location.replace(zhPath + window.location.search + window.location.hash);
+    return;
+  }
+  if (pref) return; // preference set, already on correct page
+
+  // No cookie: detect browser language
   var lang = navigator.language || navigator.userLanguage || '';
   if (lang.toLowerCase().indexOf('zh') === 0) return; // Chinese browser, stay on default
-  // Non-Chinese browser on Chinese page -> redirect to English
-  var enPath = '/en' + window.location.pathname + window.location.search + window.location.hash;
+  if (onEn) return; // already on English
+
+  // Non-Chinese browser, no cookie, on Chinese page -> redirect to English
   document.cookie = 'lang_pref=en;path=/;max-age=2592000';
-  window.location.replace(enPath);
+  window.location.replace('/en' + path + window.location.search + window.location.hash);
 })();
 </script>

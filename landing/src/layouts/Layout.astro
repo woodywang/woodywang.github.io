@@ -49,23 +49,29 @@ const { title, description, lang = "zh-CN" } = Astro.props;
   <body>
     <slot />
     <script is:inline>
-      // Browser language auto-detection
+      // Browser language auto-detection + cookie-based redirect
       (function () {
-        // Only run on the root path (Chinese page)
-        if (window.location.pathname !== "/") return;
-
-        // Check if user has a language preference cookie
+        var path = window.location.pathname;
         var match = document.cookie.match(/(?:^|; )lang=([^;]*)/);
-        if (match) return; // User already made a choice, don't redirect
+        var pref = match ? match[1] : null;
 
-        // Detect browser language
-        var lang = navigator.language || navigator.userLanguage || "";
-        var isChinese =
-          lang.startsWith("zh") ||
-          lang.startsWith("cn");
+        // If user has a preference cookie, redirect to the right version
+        if (pref === 'en' && path === '/') {
+          window.location.replace('/en/');
+          return;
+        }
+        if (pref === 'zh' && path.indexOf('/en') === 0) {
+          window.location.replace('/');
+          return;
+        }
+        if (pref) return; // preference set, already on correct page
 
-        if (!isChinese) {
-          window.location.replace("/en/");
+        // No cookie: detect browser language
+        var lang = navigator.language || navigator.userLanguage || '';
+        var isChinese = lang.startsWith('zh') || lang.startsWith('cn');
+
+        if (!isChinese && path === '/') {
+          window.location.replace('/en/');
         }
       })();
     </script>
