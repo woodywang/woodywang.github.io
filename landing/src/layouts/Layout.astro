@@ -31,6 +31,11 @@ const { title, description, lang = "zh-CN" } = Astro.props;
     <meta name="twitter:description" content={description} />
 
     <meta name="theme-color" content="#2e7d32" />
+
+    <!-- Hreflang for SEO -->
+    <link rel="alternate" hreflang="zh-CN" href="https://brainsandbox.com/" />
+    <link rel="alternate" hreflang="en" href="https://brainsandbox.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://brainsandbox.com/" />
     <title>{title}</title>
 
     <!-- Google AdSense -->
@@ -48,33 +53,7 @@ const { title, description, lang = "zh-CN" } = Astro.props;
   </head>
   <body>
     <slot />
-    <script is:inline>
-      // Browser language auto-detection + cookie-based redirect
-      (function () {
-        var path = window.location.pathname;
-        var match = document.cookie.match(/(?:^|; )lang=([^;]*)/);
-        var pref = match ? match[1] : null;
-
-        // If user has a preference cookie, redirect to the right version
-        if (pref === 'en' && path === '/') {
-          window.location.replace('/en/');
-          return;
-        }
-        if (pref === 'zh' && path.indexOf('/en') === 0) {
-          window.location.replace('/');
-          return;
-        }
-        if (pref) return; // preference set, already on correct page
-
-        // No cookie: detect browser language
-        var lang = navigator.language || navigator.userLanguage || '';
-        var isChinese = lang.startsWith('zh') || lang.startsWith('cn');
-
-        if (!isChinese && path === '/') {
-          window.location.replace('/en/');
-        }
-      })();
-    </script>
+    <!-- Language detection handled server-side or by manual switcher -->
   </body>
 </html>
 
