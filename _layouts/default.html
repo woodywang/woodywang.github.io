@@ -10,25 +10,8 @@
 {% seo %}
     {% feed_meta %}
     {% include head-custom.html %}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "{{ site.title | escape }}",
-      "description": "{{ site.description | strip_newlines | escape }}",
-      "url": "{{ site.url }}/",
-      "inLanguage": "zh-CN",
-      "author": {
-        "@type": "Person",
-        "name": "{{ site.author.name | escape }}",
-        "url": "{{ site.url }}/about/",
-        "sameAs": [
-          "https://github.com/{{ site.github_username }}",
-          "https://twitter.com/{{ site.twitter_username }}"
-        ]
-      }
-    }
-    </script>
+    <link rel="alternate" hreflang="zh-CN" href="{{ site.url }}{{ page.url }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}" />
   </head>
 
   <body>

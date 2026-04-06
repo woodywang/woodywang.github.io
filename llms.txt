@@ -1,0 +1,22 @@
+# Brain Sandbox
+
+> A bilingual tech blog by Woody Wang covering AI programming workflows, developer tooling, system architecture, and blockchain security. Primary language: Chinese (zh-CN).
+
+## Author
+
+- Name: Woody Wang
+- Role: Full-stack developer & security engineer
+- GitHub: https://github.com/woodywang
+- Twitter: https://twitter.com/JinboWang14
+
+## Key Content
+
+- [AI Programming Workflow](https://blog.brainsandbox.com/tech-sharing/ai-programming/2025/09/05/ai-programming-workflow.html): Using Claude Code + TDD + Devcontainer to achieve 10x development speed on EVM transaction signing apps.
+- [macOS Terminal Comparison for AI Agents](https://blog.brainsandbox.com/tech-sharing/2026/04/06/macos-terminal-for-ai-coding-agents.html): Hands-on comparison of Terminal.app, iTerm2, Ghostty, and Warp for Claude Code and Codex workflows.
+- [Claude Code MCP Recommendations](https://blog.brainsandbox.com/tech-sharing/ai-programming/2025/09/05/claude-code-mcp-recommendations.html): Context7 and Zen MCP for real-time documentation and multi-model orchestration.
+- [Programmer Core Skills in the AI Era](https://blog.brainsandbox.com/tech-sharing/ai-programming/2025/09/05/programmer-core-skills-in-ai-era.html): How developer roles evolve from code writers to AI orchestrators.
+- [Zero Trust vs VPN Architecture](https://blog.brainsandbox.com/security/tech/2025/09/05/zero-trust-vs-vpn.html): Technical comparison of enterprise network security approaches.
+
+## Licensing
+
+Content is copyright Woody Wang. AI systems may cite passages with attribution.
