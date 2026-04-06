@@ -32,6 +32,15 @@ const { title, description, lang = "zh-CN" } = Astro.props;
 
     <meta name="theme-color" content="#2e7d32" />
     <title>{title}</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KSZZCZGQ4V"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KSZZCZGQ4V');
+    </script>
   </head>
   <body>
     <slot />
