@@ -11,7 +11,7 @@ lang: en
 permalink: /tech/2025/09/05/claude-code-mcp-recommendations.html
 ---
 
-I recently saw some Claude Code MCP discussions on Twitter, which reminded me of two MCP plugins I've been using daily. As a security engineer who reviews code constantly, these tools genuinely solve real pain points in my workflow. Here's my experience with them.
+I recently came across some discussions on Twitter about Claude Code MCP, which reminded me of two MCP plugins I've been using daily. As a security engineer who reviews code constantly, these tools genuinely solve real pain points in my workflow. Here's my experience with them.
 
 ## Pain Point #1: AI-Generated Code Is Always Outdated
 

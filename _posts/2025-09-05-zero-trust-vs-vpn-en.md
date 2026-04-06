@@ -56,7 +56,7 @@ Here's a useful analogy: traditional VPN is like an old apartment complex where 
 The Supabase internal app I audited recently was a perfect case study. The vulnerabilities were everywhere, and when I tried to lock things down with IP whitelisting -- no dice. Cloud services like this simply don't support it. VPN was completely useless here.
 
 This is the reality we're dealing with now:
-- SaaS services don't respect IP whitelists
+- SaaS services don't support IP whitelists
 - Employee devices are all over the map (phones, tablets, gaming laptops -- you name it)
 - Remote work is the norm, not the exception
 - Applications are scattered across AWS, GCP, Alibaba Cloud

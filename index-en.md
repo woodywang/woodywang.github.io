@@ -49,4 +49,4 @@ If you have any thoughts or suggestions, feel free to reach out:
 
 ---
 
-*Welcome to the sandbox. Feel free to explore, break things, and learn something new.*
+*Welcome to the sandbox. Feel free to explore, break conventions, and learn something new.*

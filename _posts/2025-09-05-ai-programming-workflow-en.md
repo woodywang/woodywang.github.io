@@ -38,7 +38,7 @@ VSCode Extensions:
 
 ### 1. Security Isolation: Devcontainer in Practice
 **The Problem**:
-While executing AI-generated on-chain operations, a `curl | bash` pipe command once contaminated the workspace with temp files.
+While executing AI-generated on-chain operations, a `curl | bash` pipeline once polluted the workspace with temporary files.
 
 **The Solution**:
 

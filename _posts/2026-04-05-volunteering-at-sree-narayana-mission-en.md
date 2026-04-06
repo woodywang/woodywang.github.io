@@ -26,7 +26,7 @@ I stood at the entrance for a moment, thinking the ratio was absurd. The space i
 
 With nothing to do in the activity room, I stepped outside for a walk around.
 
-That changed my mood. In the hallways, quite a few elderly residents sat quietly — mostly Chinese faces, not talking. Some were on IV drips, with caregivers wheeling the stands past them. Many of the caregivers were Indian, and the residents spoke Hokkien or Mandarin while the caregivers spoke English or Tamil. Basically everyone was in their own world, minimal interaction. One elderly person smiled at me. I didn't know what to say, so I smiled back and kept walking.
+That changed my mood. In the hallways, quite a few elderly residents sat quietly — mostly Chinese residents, not talking. Some were on IV drips, with caregivers wheeling the stands past them. Many of the caregivers were Indian, and the residents spoke Hokkien or Mandarin while the caregivers spoke English or Tamil. Basically everyone was in their own world, minimal interaction. One elderly person smiled at me. I didn't know what to say, so I smiled back and kept walking.
 
 In any case, that walk around the hallways hit harder than watching people fish for plastic fish.
 
