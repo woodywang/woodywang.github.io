@@ -7,6 +7,8 @@ categories: [security, tech]
 tags: [Zero Trust, VPN, network security, enterprise security]
 comments: true
 mermaid: true
+lang: zh-CN
+permalink: /security/tech/2025/09/05/zero-trust-vs-vpn.html
 ---
 
 说到企业网络安全，VPN 绝对是大多数人的第一反应。我刚入行那会儿，每次访问公司内部系统，都得先伺候好那个让人又爱又恨的 VPN 客户端——连不上它，啥都干不了。但最近审计一个跑在 Supabase 上的内部应用时，我彻底被逼着重新思考：在云服务满天飞的今天，老一套 VPN 防护还罩得住吗？

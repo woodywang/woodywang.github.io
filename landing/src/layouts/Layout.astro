@@ -2,13 +2,14 @@
 interface Props {
   title: string;
   description: string;
+  lang?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, lang = "zh-CN" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,6 +35,27 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <slot />
+    <script is:inline>
+      // Browser language auto-detection
+      (function () {
+        // Only run on the root path (Chinese page)
+        if (window.location.pathname !== "/") return;
+
+        // Check if user has a language preference cookie
+        var match = document.cookie.match(/(?:^|; )lang=([^;]*)/);
+        if (match) return; // User already made a choice, don't redirect
+
+        // Detect browser language
+        var lang = navigator.language || navigator.userLanguage || "";
+        var isChinese =
+          lang.startsWith("zh") ||
+          lang.startsWith("cn");
+
+        if (!isChinese) {
+          window.location.replace("/en/");
+        }
+      })();
+    </script>
   </body>
 </html>
 

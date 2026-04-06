@@ -7,6 +7,8 @@ categories: [tech]
 tags: [claude-code, mcp, ai-tools, productivity]
 comments: true
 mermaid: true
+lang: zh-CN
+permalink: /tech/2025/09/05/claude-code-mcp-recommendations.html
 ---
 
 最近在 Twitter 看到 Claude Code MCP 的讨论，让我想起正在使用的两个 MCP 插件。作为需要频繁审计代码的安全工程师，这两个工具确实解决了实际工作中的痛点，分享下使用体验。

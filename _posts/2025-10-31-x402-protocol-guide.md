@@ -5,6 +5,8 @@ description: "详解 x402 协议的 12 步支付流程、四大角色和核心�
 date: 2025-10-31
 categories: [tech, blockchain]
 tags: [ai, x402]
+lang: zh-CN
+permalink: /tech/blockchain/2025/10/31/x402-protocol-guide.html
 ---
 
 ## 1. 简介：为什么 x402 如此重要？

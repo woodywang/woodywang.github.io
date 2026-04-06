@@ -1,15 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getTranslations } from '../i18n/translations';
+import Layout from '../../layouts/Layout.astro';
+import { getTranslations } from '../../i18n/translations';
 
-const t = getTranslations('zh');
+const t = getTranslations('en');
 ---
 
-<Layout title={t.meta_title} description={t.meta_description} lang="zh-CN">
+<Layout title={t.meta_title} description={t.meta_description} lang="en">
   <main>
     <!-- Language Switcher -->
     <nav class="lang-switcher">
-      <a href={t.lang_switch_url} onclick="document.cookie='lang=en;path=/;max-age=31536000'">{t.lang_switch_label}</a>
+      <a href={t.lang_switch_url} onclick="document.cookie='lang=zh;path=/;max-age=31536000'">{t.lang_switch_label}</a>
     </nav>
 
     <!-- Hero -->
@@ -35,8 +35,7 @@ const t = getTranslations('zh');
       </div>
       <h1>Brain Sandbox</h1>
       <p class="tagline">{t.site_tagline}</p>
-      <p class="tagline-en">{t.site_tagline_en}</p>
-      <a href={t.cta_url} class="cta" onclick="document.cookie='lang=zh;path=/;max-age=31536000'">{t.cta_button} &rarr;</a>
+      <a href={t.cta_url} class="cta" onclick="document.cookie='lang=en;path=/;max-age=31536000'">{t.cta_button} &rarr;</a>
     </section>
 
     <!-- About -->
@@ -111,15 +110,7 @@ const t = getTranslations('zh');
   .tagline {
     font-size: 1.25rem;
     color: var(--color-text-secondary);
-    margin-bottom: 0.25rem;
-  }
-
-  .tagline-en {
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    opacity: 0.7;
     margin-bottom: 2rem;
-    min-height: 1.4em;
   }
 
   .cta {

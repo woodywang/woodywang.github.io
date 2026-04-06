@@ -7,6 +7,8 @@ categories: [tech-sharing, ai-programming]
 tags: [Claude Code, TDD, Devcontainer, 开发工具, 经验分享]
 comments: true
 mermaid: true
+lang: zh-CN
+permalink: /tech-sharing/ai-programming/2025/09/05/ai-programming-workflow.html
 ---
 
 大家好，我是一名全栈开发者，最近在开发基于 EVM 的交易签名审核 Web 应用（React 前端 + Solidity 合约）时，通过系统化应用 AI 编程将开发效率提升 10 倍。本文将分享具体的技术实践，包含工具配置细节、真实案例分析和可复用的工作流模板。

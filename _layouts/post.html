@@ -54,7 +54,7 @@ layout: default
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ site.category_display[site.active_lang][page.categories | first] | default: page.categories | first | escape }}",
+      {% assign first_cat = page.categories | first %}{% assign cat_name = site.category_display[site.active_lang][first_cat] | default: first_cat %}"name": "{{ cat_name | escape }}",
       "item": "{{ site.url }}/categories/{{ page.categories | first | downcase | uri_escape }}/"
     },
     {

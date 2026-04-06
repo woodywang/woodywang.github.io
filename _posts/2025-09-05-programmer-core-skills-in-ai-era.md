@@ -7,6 +7,8 @@ categories: [tech]
 tags: [ai-coding, career-development, programming-skills, software-engineering]
 comments: true
 mermaid: true
+lang: zh-CN
+permalink: /tech/2025/09/05/programmer-core-skills-in-ai-era.html
 ---
 
 最近和几个朋友聊天，大家都有个共同感受：写代码这件事，真的变了。

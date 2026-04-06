@@ -6,6 +6,8 @@ date: 2026-04-04 22:00:00 +0800
 categories: [life]
 tags: [新加坡, 义工, PR, 生活]
 comments: true
+lang: zh-CN
+permalink: /life/2026/04/04/volunteering-at-sree-narayana-mission.html
 ---
 
 昨天去了一趟 Yishun 的 Sree Narayana Mission 养老院做义工。说"做义工"其实有点心虚，因为一整个上午我基本都坐在旁边刷 AWS 考试题，连义工的边都没沾上。

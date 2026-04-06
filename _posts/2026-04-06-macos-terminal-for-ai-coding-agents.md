@@ -7,6 +7,8 @@ categories: [tech-sharing]
 tags: [终端, Claude Code, Codex, Ghostty, iTerm2, Warp, AI 编程, 开发工具]
 comments: true
 mermaid: true
+lang: zh-CN
+permalink: /tech-sharing/2026/04/06/macos-terminal-for-ai-coding-agents.html
 ---
 
 如果你和我一样，日常开发已经离不开 Claude Code 和 Codex 这类 AI 编码 Agent，那你大概也思考过一个问题：**终端本身会不会影响 AI 的使用体验？**
