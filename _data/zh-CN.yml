@@ -1,0 +1,37 @@
+site_tagline: "一个关于技术与生活的思考实验场"
+
+# Author bio
+author_bio: "全栈开发者 / 安全工程师，关注 AI 编程、系统架构与区块链技术。"
+author_learn_more: "了解更多"
+
+# Post layout
+label_category: "分类:"
+label_tags: "标签:"
+label_back_home: "返回首页"
+
+# Index page
+welcome_title: "欢迎来到 Brain Sandbox"
+about_space_title: "关于这个空间"
+about_space_description: "这里是我的数字沙盒，一个记录技术探索和生活感悟的地方。在这里，你会发现："
+about_bullet_1: "**技术实验** - 各种技术栈的探索和实践"
+about_bullet_2: "**开发笔记** - 编程技巧、工具使用和问题解决"
+about_bullet_3: "**架构思考** - 系统设计和架构模式的讨论"
+about_bullet_4: "**生活感悟** - 工作与生活平衡的思考"
+recent_posts: "最近的文章"
+read_more: "继续阅读 →"
+no_posts: "即将更新 - 敬请期待第一篇文章！"
+view_all_posts: "查看所有文章 →"
+contact_title: "联系我"
+contact_description: "如果你有任何想法或建议，欢迎通过以下方式联系我："
+footer_quote: "欢迎来到沙盒。随意探索，打破常规，学点新东西。"
+
+# Archive
+archive_title: "所有文章"
+archive_year_suffix: " 年"
+
+# 404
+not_found_title: "页面未找到 :("
+not_found_message: "你访问的页面不存在或已被移除。"
+
+# Language
+lang_name: "中文"

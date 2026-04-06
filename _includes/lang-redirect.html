@@ -1,0 +1,15 @@
+<script>
+(function() {
+  // Skip if user has a language preference cookie
+  if (document.cookie.indexOf('lang_pref=') !== -1) return;
+  // Skip if already on English path
+  if (window.location.pathname.indexOf('/en/') === 0 || window.location.pathname === '/en') return;
+  // Check browser language
+  var lang = navigator.language || navigator.userLanguage || '';
+  if (lang.toLowerCase().indexOf('zh') === 0) return; // Chinese browser, stay on default
+  // Non-Chinese browser on Chinese page -> redirect to English
+  var enPath = '/en' + window.location.pathname + window.location.search + window.location.hash;
+  document.cookie = 'lang_pref=en;path=/;max-age=2592000';
+  window.location.replace(enPath);
+})();
+</script>

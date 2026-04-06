@@ -1,0 +1,15 @@
+<div class="language-switcher">
+  {% for lang in site.languages %}
+    {% if lang == site.active_lang %}
+      <span class="lang-current">{{ site.data[lang].lang_name }}</span>
+    {% else %}
+      {% if lang == site.default_lang %}
+        {% assign target_url = page.url %}
+      {% else %}
+        {% assign target_url = "/" | append: lang | append: page.url %}
+      {% endif %}
+      <a href="{{ target_url | relative_url }}" class="lang-link" onclick="document.cookie='lang_pref={{ lang }};path=/;max-age=2592000'">{{ site.data[lang].lang_name }}</a>
+    {% endif %}
+    {% unless forloop.last %}<span class="lang-sep"> | </span>{% endunless %}
+  {% endfor %}
+</div>

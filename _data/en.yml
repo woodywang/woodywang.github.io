@@ -1,0 +1,37 @@
+site_tagline: "A sandbox for experiments in tech and life"
+
+# Author bio
+author_bio: "Full-stack developer & security engineer, focused on AI programming, system architecture, and blockchain."
+author_learn_more: "Learn more"
+
+# Post layout
+label_category: "Category:"
+label_tags: "Tags:"
+label_back_home: "Back to home"
+
+# Index page
+welcome_title: "Welcome to Brain Sandbox"
+about_space_title: "About This Space"
+about_space_description: "This is my digital sandbox, a place to document tech explorations and life reflections. Here you'll find:"
+about_bullet_1: "**Tech Experiments** - Exploring and practicing with various tech stacks"
+about_bullet_2: "**Dev Notes** - Programming tips, tool usage, and problem solving"
+about_bullet_3: "**Architecture Thoughts** - Discussions on system design and patterns"
+about_bullet_4: "**Life Reflections** - Thoughts on work-life balance"
+recent_posts: "Recent Posts"
+read_more: "Read more →"
+no_posts: "Coming soon - stay tuned for the first post!"
+view_all_posts: "View all posts →"
+contact_title: "Contact"
+contact_description: "If you have any thoughts or suggestions, feel free to reach out:"
+footer_quote: "Welcome to the sandbox. Explore freely, break conventions, learn something new."
+
+# Archive
+archive_title: "All Posts"
+archive_year_suffix: ""
+
+# 404
+not_found_title: "Page Not Found :("
+not_found_message: "The page you're looking for doesn't exist or has been removed."
+
+# Language
+lang_name: "English"

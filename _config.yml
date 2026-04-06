@@ -1,26 +1,12 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: Brain Sandbox
-description: >- # this means to ignore newlines until "baseurl:"
+description: >-
   一个关于技术与生活的思考实验场
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.brainsandbox.com" # the base hostname & protocol for your site
+baseurl: ""
+url: "https://blog.brainsandbox.com"
 lang: "zh-CN"
 twitter_username: JinboWang14
-github_username:  woodywang
+github_username: woodywang
 author:
   name: "Woody Wang"
   twitter: "JinboWang14"
@@ -33,21 +19,52 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-polyglot
 
-# Category and Tag display mappings
+# Polyglot i18n
+languages: ["zh-CN", "en"]
+default_lang: "zh-CN"
+exclude_from_localization: ["assets", "images", "css", "javascript", "favicon.svg", "CNAME", "robots.txt", "llms.txt", "docs"]
+parallel_localization: true
+
+sass:
+  sourcemap: never
+
+# Category and Tag display mappings (keyed by language)
 category_display:
-  tech: "技术分享"
-  life: "生活感悟"
-  notes: "开发笔记"
-  security: "信息安全"
+  zh-CN:
+    tech: "技术分享"
+    tech-sharing: "技术分享"
+    life: "生活感悟"
+    notes: "开发笔记"
+    security: "信息安全"
+    hardware: "硬件"
+    blockchain: "区块链"
+    ai-programming: "AI 编程"
+  en:
+    tech: "Tech"
+    tech-sharing: "Tech Sharing"
+    life: "Life"
+    notes: "Dev Notes"
+    security: "Security"
+    hardware: "Hardware"
+    blockchain: "Blockchain"
+    ai-programming: "AI Programming"
 
 tag_display:
-  claude-code: "Claude Code"
-  mcp: "MCP"
-  ai-tools: "AI工具"
-  productivity: "开发效率"
+  zh-CN:
+    claude-code: "Claude Code"
+    mcp: "MCP"
+    ai-tools: "AI 工具"
+    productivity: "开发效率"
+  en:
+    claude-code: "Claude Code"
+    mcp: "MCP"
+    ai-tools: "AI Tools"
+    productivity: "Productivity"
 
-# Exclude from processing.
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock

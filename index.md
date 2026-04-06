@@ -1,5 +1,7 @@
 ---
 layout: home
+lang: zh-CN
+permalink: /
 ---
 
 # 欢迎来到 Brain Sandbox

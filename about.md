@@ -2,6 +2,7 @@
 layout: default
 title: 关于
 permalink: /about/
+lang: zh-CN
 ---
 
 # 关于 Brain Sandbox
