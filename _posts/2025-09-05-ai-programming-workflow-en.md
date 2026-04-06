@@ -84,10 +84,10 @@ Implement EVM-compatible EIP-712 signature verification:
 
 ```mermaid
 graph LR
-A[前端组件] --> B[签名服务层]
-B --> C[合约交互层]
-C --> D[验证合约]
-D --> E[事件日志]
+A[Frontend Components] --> B[Signing Service Layer]
+B --> C[Contract Interaction Layer]
+C --> D[Verification Contract]
+D --> E[Event Logs]
 ```
 
 3. **Manual Refinements**:

@@ -25,13 +25,13 @@ But new problems have emerged. The most typical one is **overly defensive progra
 
 ```mermaid
 graph TD
-    A[AI 生成代码] --> B{异常处理策略}
-    B --> C[过度 try-catch]
-    B --> D[合理异常处理]
-    C --> E[掩盖真实错误]
-    C --> F[排查困难]
-    D --> G[错误及时暴露]
-    D --> H[便于调试]
+    A[AI-Generated Code] --> B{Exception Handling Strategy}
+    B --> C[Excessive try-catch]
+    B --> D[Reasonable Exception Handling]
+    C --> E[Masks Real Errors]
+    C --> F[Hard to Debug]
+    D --> G[Errors Surface Promptly]
+    D --> H[Easy to Debug]
 
     style C fill:#ffcccc
     style E fill:#ff9999
@@ -57,20 +57,20 @@ Being able to use AI effectively is a skill in itself -- why fight it? The key i
 
 ```mermaid
 graph LR
-    A[传统面试方式] --> B[算法题]
-    A --> C[八股文]
-    A --> D[手写代码]
+    A[Traditional Interview] --> B[Algorithm Problems]
+    A --> C[Textbook Trivia]
+    A --> D[Handwritten Code]
 
-    E[AI 时代面试] --> F[系统设计]
-    E --> G[架构思考]
-    E --> H[问题解决能力]
-    E --> I[AI 协作能力]
+    E[AI-Era Interview] --> F[System Design]
+    E --> G[Architectural Thinking]
+    E --> H[Problem-Solving Ability]
+    E --> I[AI Collaboration Skills]
 
-    B --> J[易被 AI 替代]
+    B --> J[Easily Replaced by AI]
     C --> J
     D --> J
 
-    F --> K[难被 AI 替代]
+    F --> K[Hard to Replace with AI]
     G --> K
     H --> K
     I --> K
@@ -117,21 +117,21 @@ AI coding tools are fundamentally a **productivity upgrade**. They free us from 
 
 ```mermaid
 graph TD
-    A[程序员技能演进] --> B[传统阶段]
-    A --> C[AI 协作阶段]
+    A[Programmer Skill Evolution] --> B[Traditional Phase]
+    A --> C[AI Collaboration Phase]
 
-    B --> D[手写所有代码]
-    B --> E[关注语法细节]
-    B --> F[重复性工作多]
+    B --> D[Handwrite All Code]
+    B --> E[Focus on Syntax Details]
+    B --> F[Lots of Repetitive Work]
 
-    C --> G[设计系统架构]
-    C --> H[控制 AI 输出]
-    C --> I[解决复杂问题]
-    C --> J[关注业务价值]
+    C --> G[Design System Architecture]
+    C --> H[Control AI Output]
+    C --> I[Solve Complex Problems]
+    C --> J[Focus on Business Value]
 
-    subgraph "价值层级"
-        K[低价值: 重复编码]
-        L[高价值: 创造性思考]
+    subgraph "Value Hierarchy"
+        K[Low Value: Repetitive Coding]
+        L[High Value: Creative Thinking]
     end
 
     D --> K

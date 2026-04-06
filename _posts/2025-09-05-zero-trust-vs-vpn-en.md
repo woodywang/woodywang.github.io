@@ -31,18 +31,18 @@ My experience using Akamai EAA at Bybit was an eye-opener. No client software to
 
 ```mermaid
 graph TB
-    User[用户] --> Auth[身份认证]
-    Auth --> Policy[权限检查]
-    Policy --> App1[应用1]
-    Policy --> App2[应用2]
-    Policy --> App3[应用3]
+    User[User] --> Auth[Authentication]
+    Auth --> Policy[Access Policy]
+    Policy --> App1[App 1]
+    Policy --> App2[App 2]
+    Policy --> App3[App 3]
 
-    subgraph "Zero Trust 核心"
+    subgraph "Zero Trust Core"
         Auth
         Policy
     end
 
-    subgraph "待保护应用"
+    subgraph "Protected Apps"
         App1
         App2
         App3

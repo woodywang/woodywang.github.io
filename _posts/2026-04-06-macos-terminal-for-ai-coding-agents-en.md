@@ -21,17 +21,17 @@ Let me just say it upfront: **no single terminal is the "optimal choice" for AI 
 
 ```mermaid
 graph LR
-    subgraph 传统终端
-        A["Terminal.app<br/>轻量 · 零配置 · 功能有限"]
-        B["iTerm2<br/>功能丰富 · 滚屏回溯 · 生态成熟"]
+    subgraph Traditional Terminal
+        A["Terminal.app<br/>Lightweight · Zero Config · Limited Features"]
+        B["iTerm2<br/>Feature Rich · Scrollback · Mature Ecosystem"]
     end
-    subgraph 新一代终端
-        C["Ghostty<br/>GPU 渲染 · 性能优先 · 仍在打磨"]
-        D["Warp<br/>AI 原生 · 内置助手 · 多模型"]
+    subgraph Next-Gen Terminal
+        C["Ghostty<br/>GPU Rendering · Performance First · Still Maturing"]
+        D["Warp<br/>AI Native · Built-in Assistant · Multi-Model"]
     end
-    A --->|"升级"| B
-    B --->|"追求性能"| C
-    B --->|"追求 AI 集成"| D
+    A --->|"Upgrade"| B
+    B --->|"Performance Focus"| C
+    B --->|"AI Integration Focus"| D
     style A fill:#e0e0e0,color:#666
     style B fill:#4CAF50,color:#fff
     style C fill:#2196F3,color:#fff

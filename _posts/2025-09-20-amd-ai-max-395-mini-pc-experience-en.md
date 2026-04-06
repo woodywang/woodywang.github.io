@@ -44,14 +44,14 @@ I went on a shopping spree (window shopping, at least) and found several manufac
 
 ```mermaid
 graph TD
-    A[AMD AI Max+ 395] --> B[16核 Zen 5 CPU]
+    A[AMD AI Max+ 395] --> B[16-Core Zen 5 CPU]
     A --> C[40CU RDNA 3.5 GPU]
     A --> D[50 TOPS NPU]
-    A --> E[128GB 统一内存]
+    A --> E[128GB Unified Memory]
 
-    E --> F[CPU 计算]
-    E --> G[GPU 渲染/AI推理]
-    E --> H[NPU AI加速]
+    E --> F[CPU Compute]
+    E --> G[GPU Rendering / AI Inference]
+    E --> H[NPU AI Acceleration]
 
     style A fill:#ff6b6b
     style E fill:#4ecdc4
@@ -110,24 +110,24 @@ The choice in front of me is genuinely difficult:
 
 ```mermaid
 flowchart TD
-    A[我的需求分析] --> B{主要用途?}
-    B -->|7B-32B 模型| C[日常使用为主]
-    B -->|70B 模型| D[偶尔测试]
+    A[My Needs Analysis] --> B{Primary Use Case?}
+    B -->|7B-32B Models| C[Mostly Daily Use]
+    B -->|70B Models| D[Occasional Testing]
 
-    C --> E{预算考虑}
+    C --> E{Budget Considerations}
     D --> E
 
-    E -->|1-2万元| F[AMD AI Max+ 395<br/>Mini 主机]
-    E -->|7万+元| G[Mac Studio<br/>M3 Ultra 512GB]
+    E -->|¥10-20K| F[AMD AI Max+ 395<br/>Mini PC]
+    E -->|¥70K+| G[Mac Studio<br/>M3 Ultra 512GB]
 
-    F --> H[✅ 性价比高<br/>✅ 够用<br/>❌ 性能上限低]
-    G --> I[✅ 性能强悍<br/>✅ 内存充足<br/>❌ 价格肉疼]
+    F --> H[✅ Great Value<br/>✅ Sufficient<br/>❌ Lower Performance Ceiling]
+    G --> I[✅ Powerful Performance<br/>✅ Ample Memory<br/>❌ Painfully Expensive]
 
-    H --> J{5万块钱差价}
+    H --> J{¥50K Price Difference}
     I --> J
 
-    J --> K[能买好几代<br/>新硬件了!]
-    K --> L[倾向选择<br/>AMD 方案]
+    J --> K[Could Buy Several<br/>Generations of New Hardware!]
+    K --> L[Leaning Toward<br/>AMD Option]
 
     style F fill:#e1f5fe
     style G fill:#fff3e0

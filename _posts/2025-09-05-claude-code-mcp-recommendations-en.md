@@ -19,15 +19,15 @@ I remember writing Ethereum smart contracts with Cursor and needing the ethers l
 
 ```mermaid
 graph TD
-    A[需要使用 ethers 库] --> B[AI 生成代码]
-    B --> C[使用 v5 语法]
-    C --> D[运行报错]
-    D --> E[手动查 v6 文档]
-    E --> F[告诉 AI 正确写法]
-    F --> G[重新生成代码]
-    G --> H{还有错误?}
-    H -->|是| D
-    H -->|否| I[终于能用]
+    A[Need to use ethers library] --> B[AI generates code]
+    B --> C[Uses v5 syntax]
+    C --> D[Runtime error]
+    D --> E[Manually check v6 docs]
+    E --> F[Tell AI the correct approach]
+    F --> G[Regenerate code]
+    G --> H{More errors?}
+    H -->|Yes| D
+    H -->|No| I[Finally works!]
 
     style D fill:#ffcccc
     style E fill:#fff2cc
@@ -44,18 +44,18 @@ The core idea is simple but effective: fetch the latest content from official do
 
 ```mermaid
 graph LR
-    A[用户请求] --> B[Context7 MCP]
-    B --> C[实时抓取官方文档]
-    C --> D[注入到 AI 上下文]
-    D --> E[AI 基于最新文档生成代码]
-    E --> F[一次写对!]
+    A[User Request] --> B[Context7 MCP]
+    B --> C[Fetch latest official docs in real time]
+    C --> D[Inject into AI context]
+    D --> E[AI generates code based on latest docs]
+    E --> F[Correct on the first try!]
 
-    subgraph "支持的文档源"
+    subgraph "Supported Documentation Sources"
         G[OpenZeppelin]
         H[Symbiotic Protocol]
         I[ethers.js]
         J[React/Next.js]
-        K[更多...]
+        K[And more...]
     end
 
     C --> G
@@ -99,23 +99,23 @@ Previously, I had to constantly switch between tools, copying and pasting -- ter
 
 ```mermaid
 graph TD
-    A[安全代码审核任务] --> B[Claude Code + Zen MCP]
+    A[Security Code Audit Task] --> B[Claude Code + Zen MCP]
 
-    B --> C[调用 GPT-5 深度分析]
-    C --> D[发现潜在风险点]
+    B --> C[Call GPT-5 for deep analysis]
+    C --> D[Identify potential risk areas]
 
-    B --> E[Claude Code 编写测试用例]
+    B --> E[Claude Code writes test cases]
     D --> E
-    E --> F[验证安全隐患]
+    E --> F[Verify security vulnerabilities]
 
-    B --> G[调用 Gemini 生成报告]
+    B --> G[Call Gemini to generate report]
     F --> G
-    G --> H[结构化审核报告]
+    G --> H[Structured Audit Report]
 
-    subgraph "多模型协作"
-        I[GPT-5: 深度思考分析]
-        J[Claude: 代码编写执行]
-        K[Gemini: 文档报告生成]
+    subgraph "Multi-Model Collaboration"
+        I[GPT-5: Deep Thinking & Analysis]
+        J[Claude: Code Writing & Execution]
+        K[Gemini: Documentation & Report Generation]
     end
 
     C -.-> I
@@ -164,12 +164,12 @@ graph LR
     A[Claude Code] --> B[Zen MCP]
     B --> C[OpenRouter API]
 
-    subgraph "可调用的模型"
+    subgraph "Available Models"
         D[GPT-5/o3]
         E[Gemini Pro]
-        F[Claude 各版本]
+        F[Claude All Versions]
         G[DeepSeek]
-        H[其他模型...]
+        H[Other Models...]
     end
 
     C --> D
