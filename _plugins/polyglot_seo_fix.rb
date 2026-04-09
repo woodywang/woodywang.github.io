@@ -53,9 +53,13 @@ module PolyglotSeoFix
       ) { "#{$1}#{correct_url}#{$2}" }
 
       # Fix x-default hreflang to always point to the default language version.
-      # Extract the zh-CN URL and use it for x-default via literal string sub.
-      zh_url = content[/hreflang="#{Regexp.escape(site.default_lang)}" href="([^"]*)"/, 1]
+      # DEBUG: add diagnostic comment to verify what the plugin sees
+      dl = site.default_lang
+      al = site.active_lang
+      zh_url = content[/hreflang="#{Regexp.escape(dl)}" href="([^"]*)"/, 1]
       xd_url = content[/hreflang="x-default" href="([^"]*)"/, 1]
+      content = content.sub("</head>",
+        "<!-- POLYGLOT_SEO_DEBUG: active=#{al} default=#{dl} zh_url=#{zh_url.inspect} xd_url=#{xd_url.inspect} -->\n</head>")
       if zh_url && xd_url && zh_url != xd_url
         content = content.sub(
           "hreflang=\"x-default\" href=\"#{xd_url}\"",
