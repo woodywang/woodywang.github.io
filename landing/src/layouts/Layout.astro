@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { title, description, lang = "zh-CN" } = Astro.props;
+const canonicalUrl = lang === "en" ? "https://brainsandbox.com/en/" : "https://brainsandbox.com/";
 ---
 
 <!doctype html>
@@ -15,13 +16,13 @@ const { title, description, lang = "zh-CN" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://brainsandbox.com/" />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://brainsandbox.com/" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Brain Sandbox" />
 
     <!-- Twitter Card -->
@@ -36,6 +37,7 @@ const { title, description, lang = "zh-CN" } = Astro.props;
     <link rel="alternate" hreflang="zh-CN" href="https://brainsandbox.com/" />
     <link rel="alternate" hreflang="en" href="https://brainsandbox.com/en/" />
     <link rel="alternate" hreflang="x-default" href="https://brainsandbox.com/" />
+
     <title>{title}</title>
 
     <!-- Google AdSense -->
