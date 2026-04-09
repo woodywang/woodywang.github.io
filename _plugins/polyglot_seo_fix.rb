@@ -53,13 +53,14 @@ module PolyglotSeoFix
       ) { "#{$1}#{correct_url}#{$2}" }
 
       # Fix x-default hreflang to always point to the default language version.
-      # Use the zh-CN hreflang URL as the source of truth for x-default.
-      default_lang = Regexp.escape(site.default_lang)
-      zh_match = content.match(/hreflang="#{default_lang}" href="([^"]*)"/)
-      if zh_match
-        content = content.gsub(
-          /(<link rel="alternate" hreflang="x-default" href=")[^"]*("\s*\/?>)/
-        ) { "#{$1}#{zh_match[1]}#{$2}" }
+      # Extract the zh-CN URL and use it for x-default via literal string sub.
+      zh_url = content[/hreflang="#{Regexp.escape(site.default_lang)}" href="([^"]*)"/, 1]
+      xd_url = content[/hreflang="x-default" href="([^"]*)"/, 1]
+      if zh_url && xd_url && zh_url != xd_url
+        content = content.sub(
+          "hreflang=\"x-default\" href=\"#{xd_url}\"",
+          "hreflang=\"x-default\" href=\"#{zh_url}\""
+        )
       end
     else
       # For default language pages: just remove duplicate canonicals (keep first)
