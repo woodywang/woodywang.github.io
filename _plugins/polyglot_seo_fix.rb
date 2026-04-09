@@ -1,4 +1,4 @@
-# Fixes canonical URL and x-default hreflang issues when using
+# Fixes canonical URL, og:url, and x-default hreflang issues when using
 # jekyll-polyglot with jekyll-seo-tag.
 #
 # Problems solved:
@@ -8,23 +8,12 @@
 #    creating duplicates
 # 3. Polyglot sets x-default hreflang to the current page's language instead
 #    of consistently pointing to the default language version
+#
+# Strategy: fix everything in post_render by directly modifying the HTML output.
+# The I18n_Headers canonical (the last one) is always correct for the current
+# language, so we use it as the source of truth.
 
 module PolyglotSeoFix
-  # Set correct canonical_url for non-default language pages so that
-  # jekyll-seo-tag generates the right canonical and og:url
-  def self.fix_canonical(page_or_doc)
-    site = page_or_doc.site
-    return unless site.respond_to?(:active_lang) && site.respond_to?(:default_lang)
-    return if site.active_lang == site.default_lang
-
-    lang_prefix = "/#{site.active_lang}"
-    url = page_or_doc.url
-    page_or_doc.data["canonical_url"] = "#{site.config['url']}#{lang_prefix}#{url}"
-  end
-
-  # Post-process rendered HTML to:
-  # - Remove duplicate canonical tags (keep the first one from jekyll-seo-tag)
-  # - Fix x-default hreflang to always point to the default language version
   def self.fix_output(page_or_doc)
     content = page_or_doc.output
     return unless content
@@ -32,42 +21,63 @@ module PolyglotSeoFix
     site = page_or_doc.site
     return unless site.respond_to?(:active_lang) && site.respond_to?(:default_lang)
 
-    # Remove duplicate canonical tags (keep first, remove subsequent)
-    canonical_re = /<link rel="canonical" href="[^"]*"\s*\/?>/
-    matches = content.scan(canonical_re)
-    if matches.length > 1
-      first_found = false
-      content = content.gsub(canonical_re) do |match|
-        if first_found
+    canonical_re = /<link rel="canonical" href="([^"]*)"\s*\/?>/
+    canonicals = content.scan(canonical_re).map(&:first)
+    return if canonicals.empty?
+
+    if site.active_lang != site.default_lang
+      # For non-default language pages:
+      # The last canonical (from I18n_Headers) has the correct language-prefixed URL.
+      # The first canonical (from jekyll-seo-tag) is missing the language prefix.
+      correct_url = canonicals.last
+
+      # Replace the first canonical with the correct URL, remove all subsequent ones
+      first_replaced = false
+      content = content.gsub(canonical_re) do
+        if first_replaced
           ""
         else
-          first_found = true
-          match
+          first_replaced = true
+          %(<link rel="canonical" href="#{correct_url}" />)
         end
       end
-    end
 
-    # Fix x-default hreflang to point to the default language version
-    if site.active_lang != site.default_lang
-      page_url = page_or_doc.url
-      default_href = "#{site.config['url']}#{page_url}"
+      # Fix og:url to match the correct canonical
       content = content.gsub(
-        /(<link rel="alternate" hreflang="x-default" href=")[^"]*("\s*\/?>)/
-      ) do
-        "#{$1}#{default_href}#{$2}"
+        /(<meta property="og:url" content=")[^"]*(")/
+      ) { "#{$1}#{correct_url}#{$2}" }
+
+      # Fix JSON-LD "url" field to match the correct canonical
+      content = content.gsub(
+        /("url"\s*:\s*")[^"]*(")/
+      ) { "#{$1}#{correct_url}#{$2}" }
+
+      # Fix x-default hreflang to always point to the default language version.
+      # Use the zh-CN hreflang URL as the source of truth for x-default.
+      default_lang = Regexp.escape(site.default_lang)
+      zh_match = content.match(/hreflang="#{default_lang}" href="([^"]*)"/)
+      if zh_match
+        content = content.gsub(
+          /(<link rel="alternate" hreflang="x-default" href=")[^"]*("\s*\/?>)/
+        ) { "#{$1}#{zh_match[1]}#{$2}" }
+      end
+    else
+      # For default language pages: just remove duplicate canonicals (keep first)
+      if canonicals.length > 1
+        first_found = false
+        content = content.gsub(canonical_re) do |match|
+          if first_found
+            ""
+          else
+            first_found = true
+            match
+          end
+        end
       end
     end
 
     page_or_doc.output = content
   end
-end
-
-Jekyll::Hooks.register :pages, :pre_render do |page|
-  PolyglotSeoFix.fix_canonical(page)
-end
-
-Jekyll::Hooks.register :documents, :pre_render do |doc|
-  PolyglotSeoFix.fix_canonical(doc)
 end
 
 Jekyll::Hooks.register :pages, :post_render do |page|
