@@ -54,6 +54,19 @@ module PolyglotSeoFix
       content = content.gsub(
         /("url"\s*:\s*")[^"]*(")/
       ) { "#{$1}#{correct_url}#{$2}" }
+
+      # Fix site-level description/title for non-default language pages.
+      # jekyll-seo-tag uses site.description (Chinese) for all languages.
+      # Replace with the localized description from _data/<lang>.yml.
+      lang_data = site.data[site.active_lang]
+      if lang_data
+        site_desc = site.config["description"]&.strip
+        localized_desc = lang_data["site_description"] || lang_data["site_tagline"]
+        if site_desc && localized_desc && !page_or_doc.data["description"]
+          # Only replace site-level description, not page-specific ones
+          content = content.gsub(site_desc, localized_desc)
+        end
+      end
     else
       # For default language: just remove duplicate canonicals (keep first)
       if canonicals.length > 1
