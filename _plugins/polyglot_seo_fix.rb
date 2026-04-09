@@ -72,31 +72,10 @@ module PolyglotSeoFix
     page_or_doc.output = content
   end
 
-  # Fix x-default in final HTML files AFTER polyglot's URL rewriting.
-  # Polyglot incorrectly adds the language prefix to x-default URLs.
-  # x-default should always point to the default language (zh-CN) version.
-  def self.fix_xdefault_in_files(site)
-    return unless site.respond_to?(:active_lang) && site.respond_to?(:default_lang)
-    return if site.active_lang == site.default_lang
-
-    lang_dir = File.join(site.dest, site.active_lang)
-    return unless Dir.exist?(lang_dir)
-
-    Dir.glob(File.join(lang_dir, "**", "*.html")).each do |file|
-      content = File.read(file)
-      default_lang_escaped = Regexp.escape(site.default_lang)
-      zh_url = content[/hreflang="#{default_lang_escaped}" href="([^"]*)"/, 1]
-      xd_url = content[/hreflang="x-default" href="([^"]*)"/, 1]
-
-      if zh_url && xd_url && zh_url != xd_url
-        content = content.sub(
-          "hreflang=\"x-default\" href=\"#{xd_url}\"",
-          "hreflang=\"x-default\" href=\"#{zh_url}\""
-        )
-        File.write(file, content)
-      end
-    end
-  end
+  # NOTE: x-default hreflang is fixed by a post-build step in the GitHub
+  # Actions workflow (.github/workflows/jekyll.yml) because polyglot's URL
+  # rewriting runs after all Jekyll hooks and incorrectly adds the language
+  # prefix to x-default URLs.
 end
 
 Jekyll::Hooks.register :pages, :post_render do |page|
@@ -107,6 +86,3 @@ Jekyll::Hooks.register :documents, :post_render do |doc|
   PolyglotSeoFix.fix_output(doc)
 end
 
-Jekyll::Hooks.register :site, :post_write do |site|
-  PolyglotSeoFix.fix_xdefault_in_files(site)
-end

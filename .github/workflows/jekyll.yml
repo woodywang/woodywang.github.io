@@ -36,6 +36,13 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Fix x-default hreflang in English pages
+        run: |
+          if [ -d "_site/en" ]; then
+            find _site/en -name "*.html" -exec sed -i 's|hreflang="x-default" href="https://blog\.brainsandbox\.com/en/|hreflang="x-default" href="https://blog.brainsandbox.com/|g' {} +
+            echo "Fixed x-default hreflang in $(find _site/en -name '*.html' | wc -l) files"
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
